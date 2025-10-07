@@ -1,3 +1,5 @@
 # Node
 /backend/node_modules
 .env
+
+*.pdf
