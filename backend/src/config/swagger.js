@@ -19,7 +19,7 @@ const swaggerDefinition = {
 
 const options = {
   definition: swaggerDefinition,
-  apis: ["src/routes/*.js", "../routes/**/*.js"],  // ajusta la ruta relativa para tus archivos de rutas
+  apis: ["./routes/*.js", "../routes/**/*.js"],  // ajusta la ruta relativa para tus archivos de rutas
 };
 
 const swaggerSpec = swaggerJsdoc(options);
