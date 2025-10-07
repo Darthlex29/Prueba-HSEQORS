@@ -10,6 +10,7 @@ Backend para el proyecto **Prueba-HSEQORS**, construido con Node.js y Express, u
 - [Variables de entorno](#variables-de-entorno)
 - [Scripts disponibles](#scripts-disponibles)
 - [Uso](#uso)
+- [Despliegue con Docker](#despliegue-con-docker)
 - [Documentación de la API](#documentación-de-la-api)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
@@ -84,6 +85,32 @@ npm start
 ```
 
 El servidor por defecto corre en [http://localhost:3000](http://localhost:3000) (puedes cambiar el puerto en `.env`).
+
+## Despliegue con Docker
+
+Este backend incluye un `Dockerfile` y un `docker-compose.yml` para facilitar el despliegue junto a una base de datos PostgreSQL.
+
+### Pasos para usar Docker Compose
+
+1. Asegúrate de tener Docker y Docker Compose instalados.
+2. Crea un archivo `.env` en la carpeta `backend` con el siguiente contenido:
+
+   ```
+   PORT=3000
+   DATABASE_URL=postgres://postgres:postgres@db:5432/hseqors
+   ```
+
+3. Construye y levanta los servicios:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+Esto levantará dos servicios:
+- **db:** PostgreSQL, accesible desde el backend en el host `db` y puerto `5432`.
+- **backend:** Tu aplicación Node.js, corriendo en el puerto `3000`.
+
+Puedes acceder a la API en [http://localhost:3000](http://localhost:3000).
 
 ## Documentación de la API
 
